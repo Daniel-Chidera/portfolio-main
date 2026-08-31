@@ -249,6 +249,46 @@ $current_page = 'home';
             </div>
           </div>
 
+          <div class="project-row">
+            <div class="project-media" data-aos="fade-left">
+              <img src="assets/img/new world.png" alt="New World clothing brand screenshot">
+            </div>
+            <div class="project-details" data-aos="fade-right">
+              <p class="project-name">
+                <span class="marker-dash">—</span>
+                <span>New World</span>
+              </p>
+              <p class="project-description">
+                A full e-commerce site for a modern clothing brand, with a
+                PHP and MySQL backend behind an HTML5, CSS3, and JavaScript
+                storefront.
+              </p>
+              <ul class="project-bullets">
+                <li>Product catalog organized across men's, women's, and children's wear categories</li>
+                <li>Shopping cart and checkout flow backed by a MySQL product and order database</li>
+                <li>Built to support seasonal drops, sales campaigns, and new arrivals</li>
+              </ul>
+              <p class="project-tech-label">Technologies</p>
+              <div class="tag-row">
+                <span class="tag-pill">PHP</span>
+                <span class="tag-pill">MySQL</span>
+                <span class="tag-pill">HTML5</span>
+                <span class="tag-pill">CSS3</span>
+                <span class="tag-pill">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://daniel-chidera.github.io/clothing-brand/" class="btn btn-outline" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>View Live Project</span>
+                </a>
+                <a href="#" class="project-link-text">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="projects-footer">

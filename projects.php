@@ -155,6 +155,31 @@ $current_page = 'projects';
             </div>
           </div>
 
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-card-header">
+              <h2>A full e-commerce site for a modern clothing brand</h2>
+              <a href="https://daniel-chidera.github.io/clothing-brand/" class="project-card-arrow" aria-label="View New World" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="project-card-media">
+              <img src="assets/img/new world.png" alt="New World clothing brand screenshot">
+            </div>
+            <h3 class="project-card-name">New World</h3>
+            <p class="project-card-description">
+              A PHP and MySQL backend behind an HTML5, CSS3, and JavaScript
+              storefront, with product categories for men's, women's, and
+              children's wear, a shopping cart, and checkout flow.
+            </p>
+            <div class="project-card-tags">
+              <span class="tag-pill">PHP</span>
+              <span class="tag-pill">MySQL</span>
+              <span class="tag-pill">HTML5</span>
+              <span class="tag-pill">CSS3</span>
+              <span class="tag-pill">JavaScript</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
