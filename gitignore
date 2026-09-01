@@ -1,0 +1,8 @@
+# Sensitive credentials — never commit this file
+config/mail-config.php
+
+# Common OS/editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

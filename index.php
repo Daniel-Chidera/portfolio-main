@@ -166,7 +166,7 @@ $current_page = 'home';
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>
-                <a href="#" class="project-link-text">
+                <a href="project.php?slug=email-scheduler" class="project-link-text">
                   <span>Case Study</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -203,7 +203,7 @@ $current_page = 'home';
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>
-                <a href="#" class="project-link-text">
+                <a href="project.php?slug=treehouse-afriq" class="project-link-text">
                   <span>Case Study</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -241,7 +241,7 @@ $current_page = 'home';
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>
-                <a href="#" class="project-link-text">
+                <a href="project.php?slug=marys-farm" class="project-link-text">
                   <span>Case Study</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -251,7 +251,7 @@ $current_page = 'home';
 
           <div class="project-row">
             <div class="project-media" data-aos="fade-left">
-              <img src="assets/img/new world.png" alt="New World clothing brand screenshot">
+              <img src="assets/img/new%20world.png" alt="New World clothing brand screenshot">
             </div>
             <div class="project-details" data-aos="fade-right">
               <p class="project-name">
@@ -281,7 +281,7 @@ $current_page = 'home';
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>
-                <a href="#" class="project-link-text">
+                <a href="project.php?slug=new-world" class="project-link-text">
                   <span>Case Study</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>

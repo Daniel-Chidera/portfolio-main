@@ -33,6 +33,8 @@
         <button type="submit" class="btn btn-primary modal-submit">
           <span>Send Message</span>
         </button>
+
+        <p class="modal-status" data-modal-status hidden></p>
       </form>
     </div>
   </div>

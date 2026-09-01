@@ -42,7 +42,7 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>A PHP-powered automation tool for scheduling emails</h2>
-              <a href="#" class="project-card-arrow" aria-label="View Email Scheduler">
+              <a href="project.php?slug=email-scheduler" class="project-card-arrow" aria-label="View Email Scheduler">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -66,7 +66,7 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>Full company website for a Lagos-based tech startup</h2>
-              <a href="#" class="project-card-arrow" aria-label="View NTDS">
+              <a href="project.php?slug=ntds" class="project-card-arrow" aria-label="View NTDS">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -89,7 +89,7 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>A full restaurant website for a Lagos-based food brand</h2>
-              <a href="#" class="project-card-arrow" aria-label="View Eatery 24/7">
+              <a href="project.php?slug=eatery-247" class="project-card-arrow" aria-label="View Eatery 24/7">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -112,7 +112,7 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>A restaurant website for a Port Harcourt-based brand</h2>
-              <a href="#" class="project-card-arrow" aria-label="View Treehouse Afriq">
+              <a href="project.php?slug=treehouse-afriq" class="project-card-arrow" aria-label="View Treehouse Afriq">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -135,7 +135,7 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>An animal farm business site built to reach bulk buyers</h2>
-              <a href="#" class="project-card-arrow" aria-label="View Mary's Farm">
+              <a href="project.php?slug=marys-farm" class="project-card-arrow" aria-label="View Mary's Farm">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -158,12 +158,12 @@ $current_page = 'projects';
           <div class="project-card" data-aos="fade-up">
             <div class="project-card-header">
               <h2>A full e-commerce site for a modern clothing brand</h2>
-              <a href="https://daniel-chidera.github.io/clothing-brand/" class="project-card-arrow" aria-label="View New World" target="_blank" rel="noopener">
+              <a href="project.php?slug=new-world" class="project-card-arrow" aria-label="View New World">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
             <div class="project-card-media">
-              <img src="assets/img/new world.png" alt="New World clothing brand screenshot">
+              <img src="assets/img/new%20world.png" alt="New World clothing brand screenshot">
             </div>
             <h3 class="project-card-name">New World</h3>
             <p class="project-card-description">

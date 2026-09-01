@@ -8,6 +8,7 @@
   --color-border: #272727;
   --color-accent: #FFFFFF;
   --color-accent-ink: #0A0A0A;
+  --color-watermark: #1E1E1E;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
@@ -40,6 +41,7 @@
   --color-border: #E2E2E2;
   --color-accent: #111111;
   --color-accent-ink: #FFFFFF;
+  --color-watermark: #ECECEC;
 }
 
 *,
@@ -384,7 +386,7 @@ h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: var(--color-surface);
+  color: var(--color-watermark);
 }
 
 @media (max-width: 720px) {
@@ -556,6 +558,30 @@ h1, h2, h3, h4 {
 .modal-submit {
   width: 100%;
   justify-content: center;
+}
+
+.modal-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-status {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: var(--space-2);
+}
+
+.modal-status[hidden] {
+  display: none;
+}
+
+.modal-status.is-success {
+  color: var(--color-ink);
+}
+
+.modal-status.is-error {
+  color: #E5484D;
 }
 
 @media (max-width: 560px) {

@@ -100,8 +100,6 @@ function initContactModal() {
   var form = document.querySelector('[data-contact-form]');
   if (!overlay) return;
 
-  var CONTACT_EMAIL = 'danielchidera2001@gmail.com';
-
   function openModal(event) {
     if (event) event.preventDefault();
     overlay.hidden = false;
@@ -136,28 +134,47 @@ function initContactModal() {
   });
 
   if (form) {
+    var submitButton = form.querySelector('.modal-submit');
+    var statusEl = form.querySelector('[data-modal-status]');
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      var name = form.querySelector('#contact-name').value.trim();
-      var email = form.querySelector('#contact-email').value.trim();
-      var phone = form.querySelector('#contact-phone').value.trim();
-      var message = form.querySelector('#contact-message').value.trim();
+      var formData = new FormData(form);
 
-      var subject = 'Portfolio inquiry from ' + name;
-      var body = message + '\n\nFrom: ' + name + ' (' + email + ')';
+      submitButton.disabled = true;
+      submitButton.querySelector('span').textContent = 'Sending...';
+      statusEl.hidden = true;
+      statusEl.classList.remove('is-success', 'is-error');
 
-      if (phone) {
-        body += '\nPhone / WhatsApp: ' + phone;
-      }
+      fetch('api/contact.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          statusEl.hidden = false;
+          statusEl.textContent = data.message;
 
-      var mailtoLink = 'mailto:' + CONTACT_EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailtoLink;
-      form.reset();
-      closeModal();
+          if (data.success) {
+            statusEl.classList.add('is-success');
+            form.reset();
+            window.setTimeout(closeModal, 1800);
+          } else {
+            statusEl.classList.add('is-error');
+          }
+        })
+        .catch(function () {
+          statusEl.hidden = false;
+          statusEl.textContent = 'Something went wrong. Please try again.';
+          statusEl.classList.add('is-error');
+        })
+        .finally(function () {
+          submitButton.disabled = false;
+          submitButton.querySelector('span').textContent = 'Send Message';
+        });
     });
   }
 }
