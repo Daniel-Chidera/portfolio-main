@@ -23,20 +23,31 @@ function initHeaderScroll() {
 function initMobileNav() {
   var toggle = document.querySelector('[data-nav-toggle]');
   var nav = document.querySelector('[data-nav-menu]');
+  var backdrop = document.querySelector('[data-nav-backdrop]');
   if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    if (backdrop) backdrop.classList.remove('is-visible');
+  }
 
   toggle.addEventListener('click', function () {
     var isOpen = nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     document.body.classList.toggle('nav-open', isOpen);
+    if (backdrop) backdrop.classList.toggle('is-visible', isOpen);
   });
 
+  if (backdrop) {
+    backdrop.addEventListener('click', closeNav);
+  }
+
   nav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
-    });
+    link.addEventListener('click', closeNav);
   });
 }
 
@@ -107,6 +118,7 @@ function initContactModal() {
       overlay.classList.add('is-visible');
     });
     document.body.classList.add('modal-open');
+    resetSubmitState();
   }
 
   function closeModal() {
@@ -115,6 +127,17 @@ function initContactModal() {
     window.setTimeout(function () {
       overlay.hidden = true;
     }, 250);
+  }
+
+  var submitButton = form ? form.querySelector('.modal-submit') : null;
+  var statusEl = form ? form.querySelector('[data-modal-status]') : null;
+
+  function resetSubmitState() {
+    if (!submitButton || !statusEl) return;
+    submitButton.disabled = false;
+    submitButton.querySelector('span').textContent = 'Send Message';
+    statusEl.hidden = true;
+    statusEl.classList.remove('is-success', 'is-error');
   }
 
   openTriggers.forEach(function (trigger) {
@@ -134,9 +157,6 @@ function initContactModal() {
   });
 
   if (form) {
-    var submitButton = form.querySelector('.modal-submit');
-    var statusEl = form.querySelector('[data-modal-status]');
-
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -160,18 +180,19 @@ function initContactModal() {
 
           if (data.success) {
             statusEl.classList.add('is-success');
+            submitButton.querySelector('span').textContent = 'Message Sent';
             form.reset();
             window.setTimeout(closeModal, 1800);
           } else {
             statusEl.classList.add('is-error');
+            submitButton.disabled = false;
+            submitButton.querySelector('span').textContent = 'Send Message';
           }
         })
         .catch(function () {
           statusEl.hidden = false;
           statusEl.textContent = 'Something went wrong. Please try again.';
           statusEl.classList.add('is-error');
-        })
-        .finally(function () {
           submitButton.disabled = false;
           submitButton.querySelector('span').textContent = 'Send Message';
         });

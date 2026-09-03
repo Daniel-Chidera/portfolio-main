@@ -1,6 +1,5 @@
   <div class="modal-overlay" data-modal-overlay hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-handle"></div>
       <button type="button" class="modal-close" data-modal-close aria-label="Close">
         <i class="fa-solid fa-xmark"></i>
       </button>
@@ -27,14 +26,14 @@
 
         <div class="modal-field">
           <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" placeholder="Enter your message" rows="5" required></textarea>
+          <textarea id="contact-message" name="message" placeholder="Enter your message" rows="3" required></textarea>
         </div>
+
+        <p class="modal-status" data-modal-status hidden></p>
 
         <button type="submit" class="btn btn-primary modal-submit">
           <span>Send Message</span>
         </button>
-
-        <p class="modal-status" data-modal-status hidden></p>
       </form>
     </div>
   </div>

@@ -6,6 +6,8 @@ $project = isset($projects_data[$slug]) ? $projects_data[$slug] : null;
 
 $current_page = 'projects';
 $page_title = $project ? $project['name'] . ' — Daniel Chidera' : 'Project Not Found — Daniel Chidera';
+$page_description = $project ? $project['tagline'] : 'This case study could not be found.';
+$page_image = $project ? $project['image'] : 'https://danielchidera.com/assets/img/office.jpg';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,20 @@ $page_title = $project ? $project['name'] . ' — Daniel Chidera' : 'Project Not
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $page_title; ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo $page_title; ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($page_description); ?>">
+  <meta property="og:image" content="<?php echo htmlspecialchars($page_image); ?>">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo $page_title; ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($page_image); ?>">
+
   <script>
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');

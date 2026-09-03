@@ -65,7 +65,9 @@ try {
     $mailer->SMTPAuth   = true;
     $mailer->Username   = $mailConfig['smtp_username'];
     $mailer->Password   = $mailConfig['smtp_password'];
-    $mailer->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+    $mailer->SMTPSecure = ($mailConfig['smtp_encryption'] ?? 'tls') === 'ssl'
+        ? PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS
+        : PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
     $mailer->Port       = $mailConfig['smtp_port'];
 
     $mailer->setFrom($mailConfig['from_email'], $mailConfig['from_name']);
@@ -80,10 +82,16 @@ try {
 } catch (PHPMailer\PHPMailer\Exception $e) {
     $emailSent = false;
     $emailError = $mailer->ErrorInfo;
+    error_log('PHPMailer send failed: ' . $emailError);
+}
+
+$responseMessage = 'Thanks, ' . $name . '! Your message has been saved.';
+if (!$emailSent) {
+    $responseMessage .= ' (Email notification failed: ' . $emailError . ')';
 }
 
 echo json_encode([
     'success' => true,
-    'message' => 'Thanks, ' . $name . '! Your message has been sent.',
+    'message' => $responseMessage,
     'email_sent' => $emailSent,
 ]);

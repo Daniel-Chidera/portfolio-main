@@ -1,5 +1,6 @@
 <?php
 $page_title = "Projects — Daniel Chidera";
+$page_description = "A collection of real projects by Daniel Chidera — from an email scheduling automation tool to full client websites for restaurants, agribusiness, and e-commerce brands.";
 $current_page = 'projects';
 ?>
 <!DOCTYPE html>
@@ -8,6 +9,21 @@ $current_page = 'projects';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $page_title; ?></title>
+  <meta name="description" content="<?php echo $page_description; ?>">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo $page_title; ?>">
+  <meta property="og:description" content="<?php echo $page_description; ?>">
+  <meta property="og:image" content="https://danielchidera.com/assets/img/office.jpg">
+  <meta property="og:url" content="https://danielchidera.com/projects.php">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo $page_title; ?>">
+  <meta name="twitter:description" content="<?php echo $page_description; ?>">
+  <meta name="twitter:image" content="https://danielchidera.com/assets/img/office.jpg">
+
   <script>
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');

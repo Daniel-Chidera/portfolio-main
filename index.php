@@ -1,5 +1,6 @@
 <?php
 $page_title = "Daniel Chidera — Web Developer & Operations Professional";
+$page_description = "Portfolio of Daniel Chidera, a web developer building reliable PHP and MySQL powered websites and tools for real businesses, backed by a background in zero-error operations.";
 $current_page = 'home';
 ?>
 <!DOCTYPE html>
@@ -8,6 +9,21 @@ $current_page = 'home';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $page_title; ?></title>
+  <meta name="description" content="<?php echo $page_description; ?>">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo $page_title; ?>">
+  <meta property="og:description" content="<?php echo $page_description; ?>">
+  <meta property="og:image" content="https://danielchidera.com/assets/img/office.jpg">
+  <meta property="og:url" content="https://danielchidera.com/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo $page_title; ?>">
+  <meta name="twitter:description" content="<?php echo $page_description; ?>">
+  <meta name="twitter:image" content="https://danielchidera.com/assets/img/office.jpg">
+
   <script>
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -199,7 +215,7 @@ $current_page = 'home';
                 <span class="tag-pill">JavaScript</span>
               </div>
               <div class="project-actions">
-                <a href="#" class="btn btn-outline">
+                <a href="https://daniel-chidera.github.io/treehouseafriq/" class="btn btn-outline" target="_blank" rel="noopener">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>
@@ -237,7 +253,7 @@ $current_page = 'home';
                 <span class="tag-pill">JavaScript</span>
               </div>
               <div class="project-actions">
-                <a href="#" class="btn btn-outline">
+                <a href="https://daniel-chidera.github.io/mary-farm/" class="btn btn-outline" target="_blank" rel="noopener">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>View Live Project</span>
                 </a>

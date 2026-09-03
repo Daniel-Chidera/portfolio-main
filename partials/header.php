@@ -1,6 +1,6 @@
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a href="index.php" class="logo">Daniel Chidera</a>
+      <a href="index.php" class="logo">Daniel<span class="logo-accent">.Dev</span></a>
 
       <nav class="nav" data-nav-menu>
         <ul>
@@ -30,3 +30,5 @@
       </div>
     </div>
   </header>
+
+  <div class="nav-backdrop" data-nav-backdrop></div>
